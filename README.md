@@ -1,4 +1,12 @@
-# Astro Starter Kit: Minimal
+# Mini Store Udemy FH
+
+# First Steps
+
+1. clone repo
+2. `bun install`
+3. Clone .env.template and rename to .env
+4. Change env vars
+5. `bun dev`
 
 ```sh
 npm create astro@latest -- --template minimal
