@@ -40,11 +40,15 @@ export const getProductsByPage = defineAction({
     `;
 
     const { rows } = await db.run(productsQuery);
-
-    console.log(rows);
+    const products = rows.map((product) => {
+      return {
+        ...product,
+        images: product.images ? product.images : 'no-image.jpg',
+      };
+    }) as unknown as ProductWithImages[];
 
     return {
-      products: rows as unknown as ProductWithImages[],
+      products: products, // rows as unknown as ProductWithImages[],
       totalPages: totalPages,
     }
   },
